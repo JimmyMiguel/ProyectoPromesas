@@ -11,16 +11,11 @@ const terminal: option = {
 
 
 
-function main() {
+async function main() {
     const instanciaProdutos = new ProductController();
-
     const final = instanciaProdutos.processOption(terminal);
-    final?.then(
-        (productos)=>{
-            console.log(productos)
-
-        }
-    )
+    const resultado = await final
+    console.log(resultado);
 }
 
 
