@@ -13,21 +13,16 @@ class Product {
 class ProductCollection {
     productsTotal: Product[] = [];
 
-    getAll() {
-        const promesa = jsonfile.readFile(__dirname + '/products.json').then(
-            (porductosJson) => {
-                this.productsTotal = porductosJson;
-                return this.productsTotal;
-            })
-        return promesa
+    getAll = async()=> {
+        const productsJson = await jsonfile.readFile(__dirname + '/products.json');
+        this.productsTotal = productsJson;
+        return this.productsTotal
     }
 
-    getById(id: number) {
-        return this.getAll().then(
-            () => {
-                return this.productsTotal.find(productSearch => productSearch.id === id)
-            })
+    getById = async (id:number)=> {
+        const productsid = await this.getAll()
+        return productsid.find(productSearch => productSearch.id === id);
+
     }
 }
-
 export { Product, ProductCollection }

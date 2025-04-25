@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "jsonfile": "^6.1.0",
-    "minimist": "^1.2.8"
+    "minimist": "^1.2.8",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "@types/jsonfile": "^6.1.4"
